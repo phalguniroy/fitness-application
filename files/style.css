@@ -1,0 +1,96 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+    background: url(https://miiego.com/uk/wp-content/uploads/sites/12/2019/03/website-product-background-pics.png);
+    background-size: cover;
+}
+
+.container{
+    width: 500px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 120px;
+}
+
+.container h2{
+    font-size: 45px;
+    color:whitesmoke;
+    font-family: serif;
+}
+
+.container p{
+    color: azure;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    margin-top: -15px;
+}
+
+.login-box{
+    width: 280px;
+    color: white;
+    float: right;
+    margin: 70px 80px 0px 0px;
+}
+
+.login-box h1{
+    float: left;
+    font-size: 40px;
+    border-bottom: 5px solid white;
+    margin-bottom: 35px;
+    padding: 30px 0px 25px 0px;
+}
+
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid white;
+}
+
+.textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+
+.btn{
+    width: 100%;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 21px 0;
+
+}
+
+.d-flex a{
+    font-family: sans-serif;
+    color: cadetblue;
+}
+
+.paragraph{
+    margin-left: 40px;
+}
+
+.paragraph a{
+    font-size: 23px;
+    color: cadetblue;
+    font-family: sans-serif;
+}

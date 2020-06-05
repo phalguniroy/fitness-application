@@ -1,0 +1,24 @@
+
+
+        
+     <div class="wrap">
+    
+
+         <h2 class = "headline">Log In</h2>
+            <form action="/auth/login" method="POST">
+
+                <input type="email"  name="email"  placeholder="email" required/>
+                <input type="password"  name="password"  placeholder="password" required/>
+                <button type="submit" class="btn btn-primary">Log In</button><br><br>
+                  
+                  </form>
+             <p style="color: red;">
+  {{{error}}}
+</p>
+                  <div class="paragraph">
+            <p>Not a member?
+                <a href="/signup">Register</a>
+            </p>
+        </div> 
+
+                  </div>
