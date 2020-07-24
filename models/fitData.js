@@ -9,8 +9,7 @@ var UserData = new Schema({
         required : true
     },
     date : {
-        type : String,
-        required : true
+        type : String
     },
     finalActivityList : { 
         type : Array , "default" : [] 
@@ -19,28 +18,22 @@ var UserData = new Schema({
         type : Array , "default" : [] 
     },
     totalCalorie : {
-        type : Number,
-        required : true
+        type : Number
     },
     height : {
-        type : Number,
-        required : true
+        type : Number
     },
     weight : {
-        type : Number,
-        required : true
+        type : Number
     },
     bmi : {
-        type : Number,
-        required : true
+        type : Number
     },
     bmr : {
-        type : Number,
-        required : true
+        type : Number
     },
     gender : {
-        type : String,
-        required : true
+        type : String
     }
 
   

@@ -12,37 +12,17 @@ router.get('/', function(req, res) {
     res.render('homepage', {
         title: "homepage",
         style: "./../files/homepage.css",
-        script: "./../files/homepage.js"
+		script: "./../files/homepage.js",
+		
     });
 });
 
 
 
 
-router.get('/login', function(req, res) {
-					res.render('login', {
-						title: "login",
-						style: "./../files/loginStyle.css"
-					});
-				});
-				
-router.get('/signup', function(req, res) {
-					res.render('signup', {
-						title: "signup",
-						style: "./../files/signupStyle.css",
-						script: "./../files/api.js"
-					});
-				});
 
 
-router.get('/dashboard', function(req, res) {
-					res.render('dashboard', {
-						title: "dashboard",
-						style: "./../files/dashboardStyle.css",
-						script: "./../files/activity.js",
-						layout: 'other'
-					});
-				});
+
 
 
 router.get('/aboutus', function(req, res) {

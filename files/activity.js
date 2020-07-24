@@ -1,3 +1,7 @@
+var d = new Date();
+var currentDate = d.getDate()+"-"+(d.getMonth() + 1)+ "-"+d.getFullYear();
+
+
 
 
   var activityList = [];//current
@@ -6,6 +10,8 @@
 
   var calx = document.getElementById("calorieBlock");
   calx.style.display = "none";
+  $("ulbutton").hide();
+
 
 var quotes=["You can do anything, but not everything.",
 "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
@@ -69,6 +75,44 @@ var quotes=["You can do anything, but not everything.",
 "All men are frauds. The only difference between them is that some admit it. I myself deny it."];
 
 
+
+
+
+//////////////////////
+
+
+var email = document.getElementById("email").innerHTML;
+
+///////////////////// function for form post
+
+function post(path, params, method='post') {
+
+  // The rest of this code assumes you are not using a library.
+  // It can be made less wordy if you use one.
+  const form = document.createElement('form');
+  form.method = method;
+  form.action = path;
+
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+
+      form.appendChild(hiddenField);
+    }
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+//////////////////////////////////
+
+
+
+
+
 var d = new Date();
 document.getElementById("showQuotes").innerHTML = quotes[d.getSeconds()];
 
@@ -99,6 +143,8 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
+
+
 
 
 
@@ -213,7 +259,18 @@ activityList = []
 }
 
 var c = 0;
+
+function addb(){
+  //finalActivityList should be pushed to db here
+  //which contain all the list of activity
+  calx.style.display = "block";
+  calCounter();
+
+}
+
 function calCounter(){
+
+ 
   
   document.getElementById('cal').innerHTML = finalActivityList[c];
   c = c + 1;
@@ -226,6 +283,7 @@ function calCounter(){
 
   if(c==(finalActivityList.length+1)){
 
+    calx.style.display = "block";
     //list of calorie according to activity can be pushed to database here- calArray
     var sum = calArray.reduce((x, y) => parseInt(x) + parseInt(y));
     document.getElementById('calCard').innerHTML= "<h3 style='color:white;padding: 12px; margin-top: 30px;margin-bottom: 30px;'>" + sum + " calories needed to burn today " + "</h2>"   
@@ -240,15 +298,10 @@ for(var i =0; i<finalActivityList; i++){
 
 }
 
-function addb(){
-  //finalActivityList should be pushed to db here
-  //which contain all the list of activity
-  calx.style.display = "block";
-  calCounter();
-
-}
 
 function finalarrlist(){
+
+
 
   var cList = $('ul.acCalist')
 $.each(finalActivityList, function(i)
@@ -263,4 +316,42 @@ $.each(finalActivityList, function(i)
         .appendTo(li);
 })
 
+
+
+
+
+/////////post
+
+
+$('#ulbutton').on('click', function(){
+  lastStep();
+})
+
+
+
+
+}
+
+
+
+////////////////for checking- working fine
+
+function check(){
+  if(finalActivityList.length == "0"){
+    alert("please insert something")
+
+  }
+  else{
+    addb();
+  }
+}
+
+
+function lastStep(){
+  post('/dashboard', {
+    date:  currentDate,
+    email: email,
+    finalActivityList: finalActivityList,
+    finalCalorieList: calArray
+  });
 }
